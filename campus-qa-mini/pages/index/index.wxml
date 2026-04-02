@@ -1,0 +1,74 @@
+<view class="page-shell">
+  <view class="custom-nav" style="padding-top: {{navMetrics.statusBarHeight}}px;">
+    <view class="custom-nav__title">校园问答首页</view>
+  </view>
+  <view class="container">
+  <view class="card header-card">
+    <view class="welcome">你好，{{userName}}</view>
+    <view class="muted">这里先完成校园问答平台，再逐步升级为知识检索 + AI 问答系统。</view>
+    <input class="input search-box" placeholder="搜索食堂、图书馆、快递、宿舍等校园信息" bindinput="handleSearch" />
+  </view>
+
+  <view class="card ai-entry-card" bindtap="toAi">
+    <view class="flex between ai-entry-top">
+      <view>
+        <view class="section-title ai-entry-title">AI 智能问答</view>
+        <view class="ai-entry-desc">基于校园知识库做检索整理，快速得到更像“助手”的回答。</view>
+      </view>
+      <view class="ai-badge">AI</view>
+    </view>
+    <view class="quick-list">
+      <view class="entry-chip">图书馆</view>
+      <view class="entry-chip">食堂餐饮</view>
+      <view class="entry-chip">快递服务</view>
+    </view>
+    <view class="ai-entry-action">进入智能问答</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">分类导航</view>
+    <view class="chip-list">
+      <view
+        wx:for="{{categoryOptions}}"
+        wx:key="*this"
+        class="category-pill {{currentCategory === item ? 'pill-active' : ''}}"
+        data-category="{{item}}"
+        bindtap="selectCategory"
+      >
+        {{item}}
+      </view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{hotQuestions.length}}">
+    <view class="section-title">热门问题</view>
+    <view
+      wx:for="{{hotQuestions}}"
+      wx:key="id"
+      class="hot-item"
+      data-id="{{item.id}}"
+      bindtap="toDetail"
+    >
+      <view class="hot-title">{{item.title}}</view>
+      <view class="muted hot-meta">{{item.category}} · {{item.views}} 浏览</view>
+    </view>
+  </view>
+
+  <view class="section-title">问题列表</view>
+  <view
+    wx:for="{{questionList}}"
+    wx:key="id"
+    class="card question-card"
+    data-id="{{item.id}}"
+    bindtap="toDetail"
+  >
+    <view class="question-title">{{item.title}}</view>
+    <view class="question-content">{{item.content}}</view>
+    <view class="tag-row">
+      <text class="pill">{{item.category}}</text>
+      <text wx:for="{{item.tags}}" wx:key="*this" class="pill">{{item}}</text>
+    </view>
+    <view class="muted question-meta">{{item.authorName}} · {{item.createdAt}} · {{item.views}} 浏览</view>
+  </view>
+  </view>
+</view>

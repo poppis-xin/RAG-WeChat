@@ -1,0 +1,158 @@
+.tabbar-shell {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: constant(safe-area-inset-bottom);
+  background: #ffffff;
+  box-shadow: 0 -10rpx 30rpx rgba(15, 23, 42, 0.08);
+}
+
+.tabbar {
+  height: 108rpx;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+.tab-item {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.tab-item--active {
+  color: #5b7cfa;
+  background: linear-gradient(180deg, rgba(91, 124, 250, 0.08), rgba(255, 255, 255, 0));
+}
+
+.tab-indicator {
+  position: absolute;
+  top: 0;
+  width: 56rpx;
+  height: 6rpx;
+  border-radius: 999rpx;
+  background: transparent;
+}
+
+.tab-indicator--active {
+  background: #5b7cfa;
+}
+
+.tab-icon {
+  position: relative;
+  width: 42rpx;
+  height: 42rpx;
+  margin-bottom: 8rpx;
+}
+
+.tab-icon--active {
+  transform: scale(1.04);
+}
+
+.tab-text {
+  font-size: 22rpx;
+  color: #64748b;
+}
+
+.tab-text--active {
+  color: #5b7cfa;
+  font-weight: 700;
+}
+
+.icon-home-roof {
+  position: absolute;
+  left: 10rpx;
+  top: 5rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-left: 4rpx solid currentColor;
+  border-top: 4rpx solid currentColor;
+  transform: rotate(45deg);
+  border-top-left-radius: 4rpx;
+}
+
+.icon-home-body {
+  position: absolute;
+  left: 11rpx;
+  top: 18rpx;
+  width: 20rpx;
+  height: 15rpx;
+  border: 4rpx solid currentColor;
+  border-top: none;
+  border-bottom-left-radius: 4rpx;
+  border-bottom-right-radius: 4rpx;
+  background: transparent;
+}
+
+.icon-home-door {
+  position: absolute;
+  left: 18rpx;
+  top: 24rpx;
+  width: 6rpx;
+  height: 9rpx;
+  border: 4rpx solid currentColor;
+  border-bottom: none;
+  border-top-left-radius: 4rpx;
+  border-top-right-radius: 4rpx;
+}
+
+.tab-item--active .icon-home-body,
+.tab-item--active .icon-home-door {
+  background: currentColor;
+}
+
+.tab-item--active .icon-home-roof {
+  background: currentColor;
+  border-left-color: currentColor;
+  border-top-color: currentColor;
+}
+
+.icon-plus-h,
+.icon-plus-v {
+  position: absolute;
+  background: currentColor;
+  border-radius: 999rpx;
+}
+
+.icon-plus-h {
+  left: 7rpx;
+  top: 18rpx;
+  width: 28rpx;
+  height: 6rpx;
+}
+
+.icon-plus-v {
+  left: 18rpx;
+  top: 7rpx;
+  width: 6rpx;
+  height: 28rpx;
+}
+
+.icon-user-head {
+  position: absolute;
+  left: 12rpx;
+  top: 4rpx;
+  width: 18rpx;
+  height: 18rpx;
+  border: 4rpx solid currentColor;
+  border-radius: 50%;
+}
+
+.icon-user-body {
+  position: absolute;
+  left: 8rpx;
+  top: 24rpx;
+  width: 26rpx;
+  height: 12rpx;
+  border: 4rpx solid currentColor;
+  border-top-left-radius: 18rpx;
+  border-top-right-radius: 18rpx;
+  border-bottom: none;
+}

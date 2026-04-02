@@ -1,0 +1,54 @@
+.profile-card {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: #ffffff;
+}
+
+.profile-name {
+  font-size: 40rpx;
+  font-weight: 800;
+  margin-bottom: 12rpx;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 20rpx;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 48rpx;
+  font-weight: 800;
+  color: #0f766e;
+  margin-bottom: 12rpx;
+}
+
+.my-question {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #e2e8f0;
+}
+
+.my-question:last-child {
+  border-bottom: none;
+}
+
+.question-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.delete-btn {
+  flex-shrink: 0;
+  min-width: 88rpx;
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  text-align: center;
+  color: #dc2626;
+  background: #fee2e2;
+  font-size: 24rpx;
+}

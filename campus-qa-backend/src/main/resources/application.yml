@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: campus-qa-backend
+
+  # ── Java 21 虚拟线程 ──────────────────────────────────
+  threads:
+    virtual:
+      enabled: true
+
+  # ── Spring AI 配置 ────────────────────────────────────
+  ai:
+    zhipuai:
+      api-key: ${ZHIPUAI_API_KEY:}
+      embedding:
+        options:
+          model: embedding-3
+    # 本地 ONNX 兜底（当 ZhipuAI key 为空时自动生效）
+    embedding:
+      transformer:
+        onnx:
+          modelUri: classpath:/models/all-MiniLM-L6-v2/model.onnx
+        tokenizer:
+          uri: classpath:/models/all-MiniLM-L6-v2/tokenizer.json

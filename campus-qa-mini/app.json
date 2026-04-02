@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/ai/ai",
+    "pages/ask/ask",
+    "pages/detail/detail",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "校园问答",
+    "navigationBarBackgroundColor": "#0f766e",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f4f7f6",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#6b7280",
+    "selectedColor": "#0f766e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/ask/ask",
+        "text": "提问"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

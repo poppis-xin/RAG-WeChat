@@ -1,0 +1,29 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment
+.env
+*.local
+
+# Java / Maven
+**/target/
+*.class
+
+# Logs
+*.log
+startup_*.log
+compile_output.txt
+compile.log
+
+# Runtime data
+campus-qa-backend/data/vector-store/
+
+# WeChat Mini Program local config
+campus-qa-mini/project.private.config.json
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,46 @@
+<view class="page-shell" wx:if="{{user}}">
+  <view class="custom-nav" style="padding-top: {{navMetrics.statusBarHeight}}px;">
+    <view class="custom-nav__title">我的</view>
+  </view>
+  <view class="container">
+  <view class="card profile-card">
+    <view class="profile-name">{{user.nickname}}</view>
+    <view class="muted">{{user.studentId}} · {{user.college}}</view>
+  </view>
+
+  <view class="stats-grid">
+    <view class="card stat-card">
+      <view class="stat-value">{{stats.totalQuestions}}</view>
+      <view class="muted">系统问题数</view>
+    </view>
+    <view class="card stat-card">
+      <view class="stat-value">{{stats.totalAnswers}}</view>
+      <view class="muted">系统回答数</view>
+    </view>
+    <view class="card stat-card">
+      <view class="stat-value">{{stats.acceptedAnswers}}</view>
+      <view class="muted">已采纳问题</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">我的提问</view>
+    <view wx:if="{{myQuestions.length === 0}}" class="muted">你还没有发布问题，可以先去“提问”页试试。</view>
+    <view
+      wx:for="{{myQuestions}}"
+      wx:key="id"
+      class="my-question"
+      data-id="{{item.id}}"
+      bindtap="toDetail"
+    >
+      <view class="question-title">{{item.title}}</view>
+      <view class="question-row">
+        <view class="muted">{{item.createdAt}} · {{item.category}}</view>
+        <view class="delete-btn" data-id="{{item.id}}" catchtap="deleteQuestion">删除</view>
+      </view>
+    </view>
+  </view>
+
+  <button class="ghost-btn" bindtap="logout">退出登录</button>
+  </view>
+</view>

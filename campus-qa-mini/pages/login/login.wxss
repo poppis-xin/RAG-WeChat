@@ -1,0 +1,19 @@
+.login-page {
+  padding-top: 80rpx;
+}
+
+.hero {
+  margin-bottom: 28rpx;
+}
+
+.hero-title {
+  font-size: 54rpx;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.hero-subtitle {
+  margin-top: 20rpx;
+  line-height: 1.7;
+  color: #475569;
+}

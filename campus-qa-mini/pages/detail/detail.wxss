@@ -1,0 +1,40 @@
+.ai-card {
+  background: linear-gradient(145deg, #f0fdfa, #ffffff);
+}
+
+.ai-summary,
+.answer-content {
+  color: #334155;
+  line-height: 1.8;
+}
+
+.refs-title,
+.meta {
+  margin-top: 18rpx;
+}
+
+.ref-item {
+  margin-top: 12rpx;
+  color: #0f766e;
+}
+
+.answer-item {
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #e2e8f0;
+}
+
+.answer-item:last-child {
+  border-bottom: none;
+}
+
+.answer-author {
+  font-weight: 700;
+}
+
+.accepted {
+  font-size: 24rpx;
+  color: #0f766e;
+  background: #ccfbf1;
+  padding: 6rpx 16rpx;
+  border-radius: 999rpx;
+}

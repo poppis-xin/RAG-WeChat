@@ -1,0 +1,49 @@
+<view class="page-shell">
+  <view class="custom-nav" style="padding-top: {{navMetrics.statusBarHeight}}px;">
+    <view class="custom-nav__title">发布问题</view>
+  </view>
+  <view class="container">
+  <view class="card intro-card">
+    <view class="section-title">发布校园问题</view>
+    <view class="muted">这一步先沉淀真实问题数据，后续知识库和 AI 问答模块就建立在这些内容之上。</view>
+  </view>
+
+  <view class="card">
+    <input class="input" placeholder="请输入问题标题，例如：图书馆周末几点闭馆？" data-field="title" value="{{title}}" bindinput="handleInput" />
+    <textarea class="textarea" placeholder="详细描述你的问题，越清楚越容易得到准确回答" data-field="content" value="{{content}}" bindinput="handleInput" />
+
+    <view class="category-block">
+      <view class="field-label">问题分类</view>
+      <view class="chip-list">
+        <view
+          wx:for="{{categoryOptions}}"
+          wx:key="*this"
+          class="category-chip {{categoryIndex === index ? 'category-active' : ''}}"
+          data-index="{{index}}"
+          bindtap="handleCategoryChange"
+        >
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <view class="tag-wrap">
+      <view class="field-label">选择标签</view>
+      <view class="chip-list">
+        <view
+          wx:for="{{tagOptions}}"
+          wx:key="name"
+          class="tag-chip {{item.selected ? 'tag-active' : ''}}"
+          data-tag="{{item.name}}"
+          bindtap="toggleTag"
+        >
+          {{item.name}}
+        </view>
+      </view>
+      <view class="muted selection-hint">已选 {{selectedTags.length}} 个标签</view>
+    </view>
+
+    <button class="primary-btn" bindtap="submitQuestion">提交问题</button>
+  </view>
+  </view>
+</view>

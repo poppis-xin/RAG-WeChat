@@ -1,0 +1,39 @@
+<view class="page-shell" wx:if="{{question}}">
+  <view class="custom-nav" style="padding-top: {{navMetrics.statusBarHeight}}px;">
+    <view class="custom-nav__bar">
+      <view class="custom-nav__back" bindtap="goBack">返回</view>
+      <view class="custom-nav__title">问题详情</view>
+    </view>
+  </view>
+  <view class="container">
+  <view class="card">
+    <view class="question-title">{{question.title}}</view>
+    <view class="question-content">{{question.content}}</view>
+    <view class="tag-row">
+      <text class="pill">{{question.category}}</text>
+      <text wx:for="{{question.tags}}" wx:key="*this" class="pill">{{item}}</text>
+    </view>
+    <view class="muted meta">{{question.authorName}} · {{question.createdAt}} · {{question.views}} 浏览</view>
+  </view>
+
+  <view class="card ai-card">
+    <view class="section-title">智能回答预留位</view>
+    <view class="ai-summary">{{question.aiAnswer.summary}}</view>
+    <view class="muted refs-title">参考来源</view>
+    <view wx:for="{{question.aiAnswer.refs}}" wx:key="*this" class="ref-item">{{item}}</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">用户回答</view>
+    <view wx:if="{{question.answers.length === 0}}" class="muted">当前还没有回答，后续可以补充“我要回答”功能。</view>
+    <view wx:for="{{question.answers}}" wx:key="id" class="answer-item">
+      <view class="flex between">
+        <view class="answer-author">{{item.authorName}}</view>
+        <view class="accepted" wx:if="{{item.accepted}}">已采纳</view>
+      </view>
+      <view class="answer-content">{{item.content}}</view>
+      <view class="muted meta">{{item.createdAt}}</view>
+    </view>
+  </view>
+  </view>
+</view>

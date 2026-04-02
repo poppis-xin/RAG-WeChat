@@ -1,0 +1,24 @@
+<view class="tabbar-shell">
+  <view class="tabbar">
+    <view
+      wx:for="{{list}}"
+      wx:key="pagePath"
+      class="tab-item {{selected === index ? 'tab-item--active' : ''}}"
+      data-index="{{index}}"
+      data-path="{{item.pagePath}}"
+      bindtap="switchTab"
+    >
+      <view class="tab-indicator {{selected === index ? 'tab-indicator--active' : ''}}"></view>
+      <view class="tab-icon tab-icon--{{item.icon}} {{selected === index ? 'tab-icon--active' : ''}}">
+        <view wx:if="{{item.icon === 'home'}}" class="icon-home-roof"></view>
+        <view wx:if="{{item.icon === 'home'}}" class="icon-home-body"></view>
+        <view wx:if="{{item.icon === 'home'}}" class="icon-home-door"></view>
+        <view wx:if="{{item.icon === 'plus'}}" class="icon-plus-h"></view>
+        <view wx:if="{{item.icon === 'plus'}}" class="icon-plus-v"></view>
+        <view wx:if="{{item.icon === 'user'}}" class="icon-user-head"></view>
+        <view wx:if="{{item.icon === 'user'}}" class="icon-user-body"></view>
+      </view>
+      <view class="tab-text {{selected === index ? 'tab-text--active' : ''}}">{{item.text}}</view>
+    </view>
+  </view>
+</view>

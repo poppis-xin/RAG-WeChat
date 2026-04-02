@@ -1,0 +1,9 @@
+{
+  "desc": "校园信息问答系统 sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

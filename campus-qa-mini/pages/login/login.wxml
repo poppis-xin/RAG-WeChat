@@ -1,0 +1,19 @@
+<view class="page-shell">
+  <view class="custom-nav" style="padding-top: {{navMetrics.statusBarHeight}}px;">
+    <view class="custom-nav__title">登录</view>
+  </view>
+  <view class="container login-page">
+  <view class="hero">
+    <view class="hero-title">校园信息问答系统</view>
+    <view class="hero-subtitle">先做可用产品，再逐步接入知识检索与大语言模型</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">登录演示账号</view>
+    <input class="input" placeholder="请输入学号" data-field="studentId" bindinput="handleInput" />
+    <input class="input" placeholder="请输入昵称" data-field="nickname" bindinput="handleInput" />
+    <input class="input" placeholder="请输入学院" data-field="college" bindinput="handleInput" />
+    <button class="primary-btn" bindtap="submitLogin">进入系统</button>
+  </view>
+  </view>
+</view>

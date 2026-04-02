@@ -1,0 +1,59 @@
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+}
+
+.intro-card {
+  background: linear-gradient(150deg, #ecfeff, #ffffff);
+}
+
+.category-block,
+.tag-wrap {
+  margin-bottom: 28rpx;
+}
+
+.field-label {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 16rpx;
+}
+
+.category-chip,
+.tag-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72rpx;
+  padding: 0 26rpx;
+  border-radius: 999rpx;
+  background: #f1f5f9;
+  color: #475569;
+  line-height: 1.2;
+  box-sizing: border-box;
+  border: 2rpx solid transparent;
+}
+
+.category-chip {
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.category-active {
+  background: #0f766e;
+  color: #ffffff;
+  border-color: #0b5f59;
+  box-shadow: 0 10rpx 24rpx rgba(15, 118, 110, 0.18);
+}
+
+.tag-active {
+  background: #0f766e;
+  color: #ffffff;
+  border-color: #0b5f59;
+  box-shadow: 0 10rpx 24rpx rgba(15, 118, 110, 0.2);
+}
+
+.selection-hint {
+  margin-top: 16rpx;
+}

@@ -1,0 +1,74 @@
+<view class="page-shell">
+  <view class="custom-nav" style="padding-top: {{navMetrics.statusBarHeight}}px;">
+    <view class="custom-nav__bar">
+      <view class="custom-nav__back" bindtap="goBack">返回</view>
+      <view class="custom-nav__title">AI 智能问答</view>
+    </view>
+  </view>
+
+  <view class="container ai-container">
+    <view class="card ai-hero">
+      <view class="section-title">校园 AI 助手</view>
+      <view class="muted">这一版会尽量把回答拆成“直接结论 + 官方依据 + 学生经验”，方便你区分正式信息和同学经验。</view>
+      <view class="quick-list">
+        <view
+          wx:for="{{quickQuestions}}"
+          wx:key="*this"
+          class="quick-chip"
+          data-question="{{item}}"
+          bindtap="useQuickQuestion"
+        >
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <view class="message-list">
+      <view
+        wx:for="{{messages}}"
+        wx:key="id"
+        class="message-row message-row--{{item.role}}"
+      >
+        <view class="message-bubble message-bubble--{{item.role}}">
+          <view class="message-content">{{item.content}}</view>
+
+          <view wx:if="{{item.officialRefs.length}}" class="message-section">
+            <view class="message-label">官方依据</view>
+            <view wx:for="{{item.officialRefs}}" wx:key="*this" class="ref-chip ref-chip--official">{{item}}</view>
+          </view>
+
+          <view wx:if="{{item.studentExperiences.length}}" class="message-section">
+            <view class="message-label">学生经验</view>
+            <view wx:for="{{item.studentExperiences}}" wx:key="*this" class="experience-card">{{item}}</view>
+          </view>
+
+          <view wx:if="{{item.matchedQuestions.length}}" class="message-section">
+            <view class="message-label">相关问题</view>
+            <view
+              wx:for="{{item.matchedQuestions}}"
+              wx:key="id"
+              class="related-card"
+              data-id="{{item.id}}"
+              bindtap="openQuestion"
+            >
+              <view class="related-title">{{item.title}}</view>
+              <view class="muted">{{item.category}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ai-input-bar">
+    <input
+      class="ai-input"
+      placeholder="输入校园问题，例如：图书馆周末几点闭馆？"
+      value="{{inputValue}}"
+      bindinput="handleInput"
+      confirm-type="send"
+      bindconfirm="sendMessage"
+    />
+    <view class="ai-send-btn {{streaming ? 'ai-send-btn--disabled' : ''}}" bindtap="sendMessage">{{streaming ? '生成中' : '发送'}}</view>
+  </view>
+</view>
