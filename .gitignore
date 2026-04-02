@@ -17,6 +17,7 @@ Thumbs.db
 startup_*.log
 compile_output.txt
 compile.log
+startup_output.txt
 
 # Runtime data
 campus-qa-backend/data/vector-store/
